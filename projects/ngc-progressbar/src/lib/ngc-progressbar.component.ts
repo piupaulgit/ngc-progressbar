@@ -1,20 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { NgcProgressbarService } from './ngc-progressbar.service';
 
 @Component({
-  selector: 'ngc-ngc-progressbar',
+  selector: 'ngc-progressbar',
   template: `
-    <p>
-      ngc-progressbar works!
-    </p>
+    <ngc-circle-progressbar
+      *ngIf="type.toLowerCase() === 'circle'"
+    ></ngc-circle-progressbar>
+    <ngc-line-progressbar
+      *ngIf="type.toLowerCase() === 'line'"
+    ></ngc-line-progressbar>
   `,
-  styles: [
-  ]
+  styles: [],
 })
-export class NgcProgressbarComponent implements OnInit {
+export class NgcProgressbarComponent implements OnInit, OnChanges {
+  @Input()
+  type: string;
+  @Input()
+  value: string;
+  constructor(private ngcProgressbarService: NgcProgressbarService) {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  ngOnChanges() {
+    this.ngcProgressbarService.getAllPassedValue(this.type, this.value);
   }
-
 }

@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NgcProgressbarService {
+  val: any;
+  constructor() {}
 
-  constructor() { }
+  getAllPassedValue(type, value) {
+    // console.log(type, value);
+    return (this.val = type);
+  }
 }
