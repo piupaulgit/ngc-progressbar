@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { NgcProgressbarService } from './ngc-progressbar.service';
+import { PassedData } from './interface/passed-data';
 
 @Component({
   selector: 'ngc-progressbar',
@@ -17,12 +18,20 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
   @Input()
   type: string;
   @Input()
-  value: string;
+  percentage: number;
+  @Input()
+  id: string;
+  passedData: PassedData;
   constructor(private ngcProgressbarService: NgcProgressbarService) {}
 
   ngOnInit(): void {}
 
   ngOnChanges() {
-    this.ngcProgressbarService.getAllPassedValue(this.type, this.value);
+    this.passedData = {
+      type: this.type,
+      percentage: this.percentage,
+      id: this.id,
+    };
+    this.ngcProgressbarService.getAllPassedValue(this.passedData);
   }
 }

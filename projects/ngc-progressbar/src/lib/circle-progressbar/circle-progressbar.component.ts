@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgcProgressbarService } from '../ngc-progressbar.service';
+import { PassedData } from '../interface/passed-data';
 
 @Component({
   selector: 'ngc-circle-progressbar',
@@ -7,11 +8,10 @@ import { NgcProgressbarService } from '../ngc-progressbar.service';
   styleUrls: ['./circle-progressbar.component.css'],
 })
 export class CircleProgressbarComponent implements OnInit {
-  test: any;
+  properties: PassedData;
   constructor(private ngcProgressbarService: NgcProgressbarService) {}
 
   ngOnInit(): void {
-    this.test = this.ngcProgressbarService.val;
-    console.log(this.test);
+    this.properties = this.ngcProgressbarService.passedData;
   }
 }
