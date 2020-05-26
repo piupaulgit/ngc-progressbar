@@ -6,6 +6,7 @@ import { Progressbar } from './progressbar';
   selector: 'ngc-progressbar',
   template: `
     <ngc-circle-progressbar
+      [progressbar]="capturedInputs"
       *ngIf="type.toLowerCase() === 'circle'"
     ></ngc-circle-progressbar>
     <ngc-line-progressbar
@@ -21,6 +22,8 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
   value: number;
   @Input()
   id: string;
+  @Input()
+  styles: Progressbar['progressBarStyles'];
 
   capturedInputs: Progressbar;
   constructor(private ngcProgressbarService: NgcProgressbarService) {}
@@ -32,7 +35,7 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
       progressBarType: this.type,
       progressBarValue: this.value,
       progressBarId: this.id,
+      progressBarStyles: this.styles,
     };
-    this.ngcProgressbarService.getAllPassedValue(this.capturedInputs);
   }
 }

@@ -1,20 +1,18 @@
-<<<<<<< HEAD
-<ngc-progressbar
-  [type]="'ciRcle'"
-  [value]="80"
-  id="progrebarOne"
-></ngc-progressbar>
-<ngc-progressbar
-  [type]="'bar'"
-  [value]="80"
-  id="progrebartwo"
-></ngc-progressbar>
-=======
-<div class="canvas-holder">
+<div class="progressbar-holder">
   <ngc-progressbar
-    [id]="'circleCanvasOne'"
-    [type]="'circle'"
-    percentage="'30'"
+    [type]="'ciRcle'"
+    [value]="80"
+    id="progrebarOne"
+    [styles]="progressBarStyle"
   ></ngc-progressbar>
 </div>
->>>>>>> e69fca061cc32b3a2c69c94df54812e64b6a0b39
+<ngc-progressbar
+  [type]="'circle'"
+  [value]="50"
+  id="progressBarTwo"
+></ngc-progressbar
+><ngc-progressbar
+  [type]="'ciRcle'"
+  [value]="10"
+  id="progressBarThree"
+></ngc-progressbar>

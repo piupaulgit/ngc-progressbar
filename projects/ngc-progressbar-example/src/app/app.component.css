@@ -1,6 +1,5 @@
-.canvas-holder {
-  width: 30%;
-  border: 1px solid #000;
-  margin: 0 auto;
-  padding: 20px;
+.progressbar-holder {
+  height: 500px;
+  width: 500px;
+  border: 2px solid red;
 }
