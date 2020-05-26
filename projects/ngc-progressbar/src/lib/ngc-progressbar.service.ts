@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
+import { Progressbar } from './progressbar';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NgcProgressbarService {
-  val: any;
+  progressBars: {}[] = [];
   constructor() {}
 
-  getAllPassedValue(type, value) {
-    // console.log(type, value);
-    return (this.val = type);
+  getAllPassedValue(progressbarInputs: Progressbar) {
+    this.progressBars.push(progressbarInputs);
+    return this.progressBars;
   }
 }
