@@ -1,4 +1,4 @@
-<div class="progressbar-holder">
+<div class="progressbar-holder responsive-holder">
   <ngc-progressbar
     [type]="'ciRcle'"
     [value]="80"
@@ -6,14 +6,20 @@
     [styles]="progressBarStyle1"
   ></ngc-progressbar>
 </div>
-<ngc-progressbar
-  [type]="'circle'"
-  [value]="50"
-  id="progressBarTwo"
-></ngc-progressbar
-><ngc-progressbar
-  [styles]="progressBarStyle2"
-  [type]="'ciRcle'"
-  [value]="10"
-  id="progressBarThree"
-></ngc-progressbar>
+
+<div class="progressbar-holder" style="width: 600px; height: 600px;">
+  <ngc-progressbar
+    [type]="'circle'"
+    [value]="50"
+    id="progressBarTwo"
+  ></ngc-progressbar>
+</div>
+
+<div class="progressbar-holder" style="width: 200px; height: 300px;">
+  <ngc-progressbar
+    [styles]="progressBarStyle2"
+    [type]="'ciRcle'"
+    [value]="10"
+    id="progressBarThree"
+  ></ngc-progressbar>
+</div>

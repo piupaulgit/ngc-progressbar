@@ -3,3 +3,8 @@
   width: 500px;
   border: 2px solid red;
 }
+.responsive-holder {
+  width: 50%;
+  margin: 0 auto;
+  height: 200px;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, ElementRef } from '@angular/core';
 import { NgcProgressbarService } from './ngc-progressbar.service';
 import { Progressbar } from './progressbar';
 
@@ -26,16 +26,24 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
   styles: Progressbar['progressBarStyles'];
 
   capturedInputs: Progressbar;
-  constructor(private ngcProgressbarService: NgcProgressbarService) {}
+  constructor(
+    private ngcProgressbarService: NgcProgressbarService,
+    private elRef: ElementRef
+  ) {}
 
   ngOnInit(): void {}
 
   ngOnChanges() {
     this.capturedInputs = {
+      parentElemnent: {
+        width: this.elRef.nativeElement.parentElement.clientWidth,
+        height: this.elRef.nativeElement.parentElement.clientHeight,
+      },
       progressBarType: this.type,
       progressBarValue: this.value,
       progressBarId: this.id,
       progressBarStyles: this.styles,
     };
+    console.log(this.capturedInputs);
   }
 }

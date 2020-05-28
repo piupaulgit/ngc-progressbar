@@ -1,4 +1,8 @@
 export interface Progressbar {
+  parentElemnent: {
+    width: number;
+    height: number;
+  };
   progressBarType: string;
   progressBarValue: number;
   progressBarId: string;
