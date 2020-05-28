@@ -7,10 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngc-progressbar-example';
-  progressBarStyle = {
+  progressBarStyle1 = {
     barStyles: {
       width: '50',
       color: 'blue',
+      style: 'round',
+    },
+  };
+
+  progressBarStyle2 = {
+    barStyles: {
+      width: '20',
+      color: '#2196f3',
     },
   };
 }

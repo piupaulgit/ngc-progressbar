@@ -6,6 +6,7 @@ export interface Progressbar {
     barStyles: {
       color: string;
       width: number;
+      style: any;
     };
     baseStyles: {};
     textStyles: {};
