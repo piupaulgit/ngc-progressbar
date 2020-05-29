@@ -1,16 +1,26 @@
-import { Component, OnInit, Input, OnChanges, ElementRef } from '@angular/core';
-import { NgcProgressbarService } from './ngc-progressbar.service';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  ElementRef,
+  HostListener,
+  ViewChild,
+} from '@angular/core';
 import { Progressbar } from './progressbar';
+import { CircleProgressbarComponent } from './circle-progressbar/circle-progressbar.component';
 
 @Component({
   selector: 'ngc-progressbar',
   template: `
     <ngc-circle-progressbar
+      (window:resize)="onResize($event)"
       [progressbar]="capturedInputs"
       *ngIf="type.toLowerCase() === 'circle'"
     ></ngc-circle-progressbar>
     <ngc-line-progressbar
-      *ngIf="type.toLowerCase() === 'line'"
+      [progressbar]="capturedInputs"
+      *ngIf="type.toLowerCase() === 'bar'"
     ></ngc-line-progressbar>
   `,
   styles: [],
@@ -26,10 +36,9 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
   styles: Progressbar['progressBarStyles'];
 
   capturedInputs: Progressbar;
-  constructor(
-    private ngcProgressbarService: NgcProgressbarService,
-    private elRef: ElementRef
-  ) {}
+  @ViewChild(CircleProgressbarComponent)
+  private circleProgressbarComponent: CircleProgressbarComponent;
+  constructor(private elRef: ElementRef) {}
 
   ngOnInit(): void {}
 
@@ -44,6 +53,13 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
       progressBarId: this.id,
       progressBarStyles: this.styles,
     };
-    console.log(this.capturedInputs);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    console.log(
+      (this.capturedInputs.parentElemnent.width = this.elRef.nativeElement.parentElement.clientWidth)
+    );
+    this.circleProgressbarComponent.test();
   }
 }

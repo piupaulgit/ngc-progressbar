@@ -10,7 +10,7 @@ export class AppComponent {
   progressBarStyle1 = {
     barStyles: {
       width: '50',
-      color: 'blue',
+      color: 'red',
       style: 'round',
     },
   };
