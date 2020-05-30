@@ -33,7 +33,7 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
   @Input()
   id: string;
   @Input()
-  styles: Progressbar['progressBarStyles'];
+  styles: Progressbar['styles'];
 
   capturedInputs: Progressbar;
   @ViewChild(CircleProgressbarComponent)
@@ -51,15 +51,14 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
       progressBarType: this.type,
       progressBarValue: this.value,
       progressBarId: this.id,
-      progressBarStyles: this.styles,
+      styles: this.styles,
     };
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    console.log(
-      (this.capturedInputs.parentElemnent.width = this.elRef.nativeElement.parentElement.clientWidth)
-    );
-    this.circleProgressbarComponent.test();
+    // console.log(
+    //   (this.capturedInputs.parentElemnent.width = this.elRef.nativeElement.parentElement.clientWidth)
+    // );
   }
 }
