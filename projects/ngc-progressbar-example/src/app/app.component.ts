@@ -8,36 +8,33 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ngc-progressbar-example';
   progressBarStyle1 = {
-    backgroundColor: '#f1f1f1',
-    // progressBarType: stringz;
-    // progressBarValue: number;
-    // progressBarId: string;
+   // main canvas styling
+   canvasBackground: '#f1f1f1',
+  progressBarRadius: 50,
 
-    progressBarStyles: {
-      progressBarRadius: 12,
-      barStyles: {
-        color: 'red',
-        width: 20,
-        style: 'round'
-      },
-      baseStyles: {
-        color: '#222',
-        width: 20,
-        style: 'square'
-      },
-      textStyles: {
-        fontSize: 20,
-        color: 'green',
-        position: 'center',
-        // html: '';
-      },
+    // base bar styling
+    baseStyles: {
+      color: '#fb2030',
+      width: 40,
+      style: 'round',
+    },
+
+    // parcentage bar stying
+    barStyles: {
+      color: '#fff',
+      width: 30,
+      style: 'round',
+    },
+
+    // text styling
+    textStyles: {
+      fontSize: 25,
+      color: 'green',
+      position: 'center',
+      html: '<span>text</span>'
     },
   };
 
   progressBarStyle2 = {
-    barStyles: {
-      width: '20',
-      color: '#2196f3',
-    },
   };
 }

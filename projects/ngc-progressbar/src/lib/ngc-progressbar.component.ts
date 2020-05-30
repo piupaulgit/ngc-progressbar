@@ -33,9 +33,30 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
   @Input()
   id: string;
   @Input()
-  styles: Progressbar['styles'];
+  styles;
 
   capturedInputs: Progressbar;
+  
+  
+  defaultBaseStyle: Progressbar['baseStyles'] = {
+    color: '#f1f1f1',
+    width: 10,
+    style: 'square'
+  }
+
+  defaultBarStyle: Progressbar['barStyles'] = {
+    color: '#333',
+    width: 10,
+    style: 'square'
+  }
+
+  defaultTextStyle: Progressbar['textStyles'] = {
+    fontSize: 25,
+    color: 'green',
+    position: 'center',
+    html: '<span></span>',
+  }
+
   @ViewChild(CircleProgressbarComponent)
   private circleProgressbarComponent: CircleProgressbarComponent;
   constructor(private elRef: ElementRef) {}
@@ -51,7 +72,11 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
       progressBarType: this.type,
       progressBarValue: this.value,
       progressBarId: this.id,
-      styles: this.styles,
+      canvasBackground: this.styles?.canvasBackground ? this.styles?.canvasBackground : 'transparent',
+      progressBarRadius: this.styles?.progressBarRadius ? this.styles?.progressBarRadius : '100',
+      barStyles: this.styles?.barStyles ? this.styles?.barStyles : this.defaultBarStyle,
+      baseStyles: this.styles?.baseStyles ? this.styles?.baseStyles : this.defaultBaseStyle,
+      textStyles: this.styles?.textStyles ? this.styles?.textStyles : this.defaultTextStyle,
     };
   }
 

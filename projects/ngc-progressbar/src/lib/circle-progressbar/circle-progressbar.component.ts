@@ -7,7 +7,6 @@ import {
   HostListener,
 } from '@angular/core';
 import { Progressbar } from '../progressbar';
-import { variable } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'ngc-circle-progressbar',
@@ -21,22 +20,80 @@ export class CircleProgressbarComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
   ngAfterViewInit() {
     console.log(this.progressbar, 'from circle com');
-    // .......................................................
 
-    // set canvas variable
+    // .......................................................
+    // setting up variables
     const canvas = <HTMLCanvasElement>(
       document.querySelector(
         `.progressbar--circle#${this.progressbar.progressBarId}`
       )
     );
 
-    // setting up your canvas( height, width, background)
+    // set context
+    const ctx = canvas.getContext('2d');
+
+    // canvas designs
     canvas.width = this.progressbar.parentElemnent.width;
-    canvas.height = this.progressbar.styles.progressBarRadius*2;
-    console.log(this.progressbar.styles.progressBarRadius,'pp')
-    canvas.style.backgroundColor = 'red'
-    // set context variable
-    const ctx = canvas.getContext('2d'); 
+    canvas.height = (this.progressbar.progressBarRadius*2) + this.progressbar.baseStyles.width;
+    canvas.style.backgroundColor = this.progressbar.canvasBackground;
+
+    // render base bar
+    ctx.beginPath();
+    ctx.arc(canvas.width/2,  canvas.height/2, this.progressbar.progressBarRadius, 0, 2 * Math.PI, true);
+    ctx.strokeStyle = this.progressbar.baseStyles.color;
+    ctx.lineWidth = this.progressbar.baseStyles.width;
+    ctx.lineCap = this.progressbar.baseStyles.style;
+    ctx.stroke();
+
+    // parcentage bar
+    const parcentageValue = this.progressbar.progressBarValue;
+    const renderdCircleValue = (2 / 100) * parcentageValue + 1.5;
+    
+    ctx.beginPath();
+    ctx.arc(canvas.width/2,  canvas.height/2, this.progressbar.progressBarRadius, 1.5 * Math.PI, renderdCircleValue * Math.PI);
+    ctx.strokeStyle = this.progressbar.barStyles.color;
+    ctx.lineWidth = this.progressbar.barStyles.width;
+    ctx.lineCap = this.progressbar.barStyles.style;
+    ctx.stroke();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //setting  needed variables
+    // const progressBarRadious = this.progressbar.styles?.progressBarStyles?.progressBarRadius ? this.progressbar.styles['progressBarStyles']?.progressBarRadius : 50;
+    // console.log(progressBarRadious, 'rad')
+
+    // // set canvas variable
+    
+    // // set context variable
+    // const ctx = canvas.getContext('2d'); 
+
+    // // setting up your canvas( height, width, background)
+    // canvas.width = this.progressbar.parentElemnent.width;
+    // canvas.height = progressBarRadious*2;
+    // canvas.style.backgroundColor = this.progressbar.backgroundColor ? this.progressbar.backgroundColor : 'transparent';
+
+    // // drawing base circle
+    // ctx.beginPath();
+    // ctx.arc(canvas.width / 2, canvas.height / 2, progressBarRadious, 0, 2 * Math.PI, true);
+    // ctx.strokeStyle = this.progressbar.styles?.baseStyles?.color ? this.progressbar.styles?.baseStyles.color : '#f1f1f1' ;
+    // ctx.lineWidth = 20;
+    // ctx.stroke();
 
 
 

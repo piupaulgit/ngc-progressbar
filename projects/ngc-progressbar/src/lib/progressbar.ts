@@ -5,28 +5,32 @@ export interface Progressbar {
     height: number;
   };
 
-  backgroundColor?: string;
+  // main canvas styling
   progressBarType: string;
   progressBarValue: number;
   progressBarId: string;
+  canvasBackground?: string;
+  progressBarRadius?: number;
 
-  styles?: {
-    progressBarRadius: number;
-    barStyles: {
-      color: string;
-      width: number;
-      style: any;
-    };
-    baseStyles: {
-      color: string;
-      width: number;
-      style: any;
-    };
-    textStyles: {
-      fontSize: number;
-      color: string;
-      position: string;
-      html: string;
-    };
+  // parcentage bar stying
+  barStyles?: {
+    color: string;
+    width: number;
+    style: any;
+  };
+
+  // base bar styling
+  baseStyles?: {
+    color: string;
+    width: number;
+    style: any;
+  };
+
+  // text styling
+  textStyles?: {
+    fontSize: number;
+    color: string;
+    position: string;
+    html: string;
   };
 }

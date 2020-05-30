@@ -10,7 +10,6 @@ export class LineProgressbarComponent implements OnInit, AfterViewInit {
   @Input()
   progressbar: Progressbar;
   constructor() {
-    console.log('tedt');
   }
 
   ngOnInit(): void {}
