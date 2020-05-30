@@ -25,19 +25,19 @@ export class LineProgressbarComponent implements OnInit, AfterViewInit {
     canvas.height = this.progressbar.parentElemnent.height;
     var ctx = canvas.getContext('2d');
     ctx.beginPath();
-    ctx.moveTo(10, 10);
-    ctx.lineTo(canvas.width - 10, 10);
-    ctx.lineCap = 'round';
-    ctx.lineWidth = 10;
-    ctx.strokeStyle = '#f2f2f2';
+    ctx.moveTo(0, 10);
+    ctx.lineTo(canvas.width, 10);
+    ctx.lineWidth = 20;
+    ctx.strokeStyle = '#333';
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.moveTo(20, 10);
-    ctx.lineTo(this.progressbar.progressBarValue, 10);
-    console.log(this.progressbar.progressBarValue);
-    ctx.lineCap = 'round';
-    ctx.lineWidth = 10;
+    ctx.moveTo(0, 10);
+    const parcentageVal =
+      (canvas.width / 100) * this.progressbar.progressBarValue;
+    ctx.lineTo(parcentageVal, 10);
+    console.log(this.progressbar.progressBarValue, parcentageVal);
+    ctx.lineWidth = 20;
     ctx.strokeStyle = 'red';
     ctx.stroke();
   }
