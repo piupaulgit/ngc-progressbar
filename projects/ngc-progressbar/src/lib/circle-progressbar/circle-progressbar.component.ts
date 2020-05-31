@@ -56,99 +56,10 @@ export class CircleProgressbarComponent implements OnInit, AfterViewInit {
     ctx.lineCap = this.progressbar.barStyles.style;
     ctx.stroke();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //setting  needed variables
-    // const progressBarRadious = this.progressbar.styles?.progressBarStyles?.progressBarRadius ? this.progressbar.styles['progressBarStyles']?.progressBarRadius : 50;
-    // console.log(progressBarRadious, 'rad')
-
-    // // set canvas variable
-    
-    // // set context variable
-    // const ctx = canvas.getContext('2d'); 
-
-    // // setting up your canvas( height, width, background)
-    // canvas.width = this.progressbar.parentElemnent.width;
-    // canvas.height = progressBarRadious*2;
-    // canvas.style.backgroundColor = this.progressbar.backgroundColor ? this.progressbar.backgroundColor : 'transparent';
-
-    // // drawing base circle
-    // ctx.beginPath();
-    // ctx.arc(canvas.width / 2, canvas.height / 2, progressBarRadious, 0, 2 * Math.PI, true);
-    // ctx.strokeStyle = this.progressbar.styles?.baseStyles?.color ? this.progressbar.styles?.baseStyles.color : '#f1f1f1' ;
-    // ctx.lineWidth = 20;
-    // ctx.stroke();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // const canvas = <HTMLCanvasElement>(
-    //   document.querySelector(
-    //     `.progressbar--circle#${this.progressbar.progressBarId}`
-    //   )
-    // );
-    // canvas.width = this.progressbar.parentElemnent.width;
-    // canvas.height = 300;
-    // console.log(canvas.height);
-    // const smallest = Math.min(
-    //   this.progressbar.parentElemnent.width,
-    //   this.progressbar.parentElemnent.height
-    // );
-    // const percent = this.progressbar.progressBarValue;
-    // const cirVal = (2 / 100) * percent + 1.5;
-    // const ctx = canvas.getContext('2d');
-
-    // // base circle
-    // ctx.beginPath();
-    // ctx.arc(canvas.width / 2, canvas.height / 2, 100, 0, 2 * Math.PI, true);
-    // ctx.strokeStyle = '#f1f1f1';
-    // ctx.lineWidth = 20;
-    // ctx.stroke();
-
-    // // bar circle
-    // ctx.beginPath();
-    // ctx.arc(
-    //   canvas.width / 2,
-    //   canvas.height / 2,
-    //   100,
-    //   1.5 * Math.PI,
-    //   cirVal * Math.PI
-    // );
-    // ctx.strokeStyle = this.progressbar.progressBarStyles?.barStyles?.color
-    //   ? this.progressbar.progressBarStyles?.barStyles?.color
-    //   : 'green';
-    // ctx.lineCap = this.progressbar.progressBarStyles?.barStyles?.style
-    //   ? this.progressbar.progressBarStyles?.barStyles?.style
-    //   : 'square';
-
-    // ctx.stroke();
+    // render text
+    ctx.font =`${this.progressbar.textStyles.fontSize}px ${this.progressbar.textStyles.fontFamily}`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle"
+    ctx.fillText(`${parcentageValue}%`, canvas.width/2,  canvas.height/2+5);
   }
 }

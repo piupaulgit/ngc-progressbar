@@ -29,6 +29,7 @@ export interface Progressbar {
   // text styling
   textStyles?: {
     fontSize: number;
+    fontFamily: string;
     color: string;
     position: string;
     html: string;

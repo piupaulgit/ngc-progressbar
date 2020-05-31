@@ -52,6 +52,7 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
 
   defaultTextStyle: Progressbar['textStyles'] = {
     fontSize: 25,
+    fontFamily: 'Arial',
     color: 'green',
     position: 'center',
     html: '<span></span>',
