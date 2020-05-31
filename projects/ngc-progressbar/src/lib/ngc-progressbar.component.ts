@@ -9,6 +9,8 @@ import {
 } from '@angular/core';
 import { Progressbar } from './progressbar';
 import { CircleProgressbarComponent } from './circle-progressbar/circle-progressbar.component';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'ngc-progressbar',
@@ -58,9 +60,15 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
     html: '<span></span>',
   }
 
+  resizeSubject = new Subject();
+
   @ViewChild(CircleProgressbarComponent)
   private circleProgressbarComponent: CircleProgressbarComponent;
-  constructor(private elRef: ElementRef) {}
+  constructor(private elRef: ElementRef) {
+    this.resizeSubject.pipe(debounceTime(100)).subscribe((parentWidth)=>{
+      this.circleProgressbarComponent.drawCircleOnResize(parentWidth)
+    })
+  }
 
   ngOnInit(): void {}
 
@@ -97,8 +105,8 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    // console.log(
-    //   (this.capturedInputs.parentElemnent.width = this.elRef.nativeElement.parentElement.clientWidth)
-    // );
+    this.capturedInputs.parentElemnent.width = this.elRef.nativeElement.parentElement.clientWidth
+    this.resizeSubject.next(this.capturedInputs.parentElemnent.width)
   }
+
 }
