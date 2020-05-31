@@ -28,9 +28,9 @@ export class AppComponent {
 
     // text styling
     textStyles: {
-      fontSize: 50,
       fontFamily: 'Arial',
-      color: 'green',
+      color: 'blue',
+      fontSize: 30,
       position: 'center',
       html: '<span>text</span>'
     },

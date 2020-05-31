@@ -60,6 +60,8 @@ export class CircleProgressbarComponent implements OnInit, AfterViewInit {
     ctx.font =`${this.progressbar.textStyles.fontSize}px ${this.progressbar.textStyles.fontFamily}`;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle"
+    ctx.fillStyle = this.progressbar.textStyles.color;
     ctx.fillText(`${parcentageValue}%`, canvas.width/2,  canvas.height/2+5);
+    console.log(this.progressbar.textStyles.color)
   }
 }
