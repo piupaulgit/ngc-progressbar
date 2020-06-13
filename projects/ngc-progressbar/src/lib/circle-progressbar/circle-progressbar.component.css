@@ -1,3 +1,4 @@
-/* canvas {
- transition: all .5s;
-} */
+canvas {
+  max-width: 100%;
+  vertical-align: middle;
+}
