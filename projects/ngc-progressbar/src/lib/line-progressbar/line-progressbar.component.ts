@@ -23,30 +23,6 @@ export class LineProgressbarComponent implements OnInit, AfterViewInit {
 
     // drawig canvas initially
     this.drawBar(this.canvas, this.progressbar.parentElemnent.width);
-
-    // const canvas = <HTMLCanvasElement>(
-    //   document.querySelector(
-    //     `.progressbar--bar#${this.progressbar.progressBarId}`
-    //   )
-    // );
-    // canvas.width = this.progressbar.parentElemnent.width;
-    // canvas.height = this.progressbar.parentElemnent.height;
-    // var ctx = canvas.getContext('2d');
-    // ctx.beginPath();
-    // ctx.moveTo(0, 10);
-    // ctx.lineTo(canvas.width, 10);
-    // ctx.lineWidth = 20;
-    // ctx.strokeStyle = '#333';
-    // ctx.stroke();
-    // ctx.beginPath();
-    // ctx.moveTo(0, 10);
-    // const parcentageVal =
-    //   (canvas.width / 100) * this.progressbar.progressBarValue;
-    // ctx.lineTo(parcentageVal, 10);
-    // console.log(this.progressbar.progressBarValue, parcentageVal);
-    // ctx.lineWidth = 20;
-    // ctx.strokeStyle = 'red';
-    // ctx.stroke();
   }
 
   drawBar(canvas, parentWidth) {
@@ -64,16 +40,29 @@ export class LineProgressbarComponent implements OnInit, AfterViewInit {
     ctx.fill();
 
     // draw bar
-    const parcentage = (canvas.width / 100) * this.progressbar.progressBarValue;
+    const parcentageValue = this.progressbar.progressBarValue;
+    const parcentageWidth =
+      (canvas.width / 100) * this.progressbar.progressBarValue;
     ctx.beginPath();
     ctx.rect(
       0,
       (this.progressbar.baseStyles.width - this.progressbar.barStyles.width) /
         2,
-      parcentage,
+      parcentageWidth,
       this.progressbar.barStyles.width
     );
     ctx.fillStyle = this.progressbar.barStyles.color;
     ctx.fill();
+
+    // render text
+    ctx.font = `${this.progressbar.textStyles.fontSize}px ${this.progressbar.textStyles.fontFamily}`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = this.progressbar.textStyles.color;
+    ctx.fillText(
+      `${parcentageValue}%`,
+      canvas.width / 2,
+      canvas.height / 2 + 5
+    );
   }
 }

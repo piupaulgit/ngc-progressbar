@@ -60,7 +60,7 @@ export class AppComponent {
     // text styling
     textStyles: {
       fontFamily: 'Arial',
-      color: 'blue',
+      color: 'white',
       fontSize: 30,
       position: 'center',
       html: '<span>text</span>',
