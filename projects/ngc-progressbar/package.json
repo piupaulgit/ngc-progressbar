@@ -1,9 +1,27 @@
 {
   "name": "ngc-progressbar",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Angular progressbar",
+  "repository": "piupaulgit/ngc-progressbar",
+  "author": "piupaul <contactpiu619@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/piupaulgit/ngc-progressbar",
+  "bugs": {
+    "url": "https://github.com/piupaulgit/ngc-progressbar/issues"
+  },
   "peerDependencies": {
     "@angular/common": "^9.1.4",
     "@angular/core": "^9.1.4",
     "tslib": "^1.10.0"
-  }
+  },
+  "keywords": [
+    "angualr",
+    "angular 9",
+    "ngc-progressbar",
+    "angular progresbar",
+    "angular circle progressbar",
+    "circle progressbar",
+    "canvas progressbar",
+    "line progressbar"
+  ]
 }

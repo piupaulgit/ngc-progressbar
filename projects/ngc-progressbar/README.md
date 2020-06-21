@@ -1,11 +1,13 @@
 # NgcProgressbar
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
+testttt
+
+<!-- This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
 ## Code scaffolding
 
 Run `ng generate component component-name --project ngc-progressbar` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngc-progressbar`.
-> Note: Don't forget to add `--project ngc-progressbar` or else it will be added to the default project in your `angular.json` file. 
+> Note: Don't forget to add `--project ngc-progressbar` or else it will be added to the default project in your `angular.json` file.
 
 ## Build
 
@@ -19,6 +21,6 @@ After building your library with `ng build ngc-progressbar`, go to the dist fold
 
 Run `ng test ngc-progressbar` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Further help
+## Further help -->
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

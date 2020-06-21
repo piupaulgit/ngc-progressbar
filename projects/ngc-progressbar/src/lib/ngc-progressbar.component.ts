@@ -127,7 +127,7 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
     };
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize', [])
   onResize() {
     this.capturedInputs.parentElemnent.width = this.elRef.nativeElement.parentElement.clientWidth;
     this.resizeSubject.next(this.capturedInputs.parentElemnent.width);
