@@ -1,14 +1,62 @@
-<div style="border: 1px solid #676763; width: 20%; height: 500px;">
-  <ngc-progressbar [type]="'circle'" [value]="20" id="progrebarTwo"></ngc-progressbar>
+<!-- <div style="border: 1px solid #676763; width: 20%; height: 500px;">
+  <ngc-progressbar
+    [type]="'circle'"
+    [value]="20"
+    id="progrebarTwo"
+  ></ngc-progressbar>
 </div>
 <br />
 <div style="border: 1px solid #676763;">
-  <ngc-progressbar [type]="'circle'" [value]="10" id="progrebarOne" [styles]="progressBarStyle1"></ngc-progressbar>
+  <ngc-progressbar
+    [type]="'circle'"
+    [value]="10"
+    id="progrebarOne"
+    [styles]="progressBarStyle1"
+  ></ngc-progressbar>
 </div>
 <br />
 <div style="border: 1px solid #676763; width: 50%; padding: 20px;">
-  <ngc-progressbar [type]="'bar'" [value]="80" id="progrebarbarOne" [styles]="progressBarBarStyle1"></ngc-progressbar>
+  <ngc-progressbar
+    [type]="'bar'"
+    [value]="80"
+    id="progrebarbarOne"
+    [styles]="progressBarBarStyle1"
+  ></ngc-progressbar>
 </div>
 <div style="border: 1px solid #676763; width: 60%; padding: 20px;">
-  <ngc-progressbar [type]="'bar'" [value]="80" id="progrebarbarDefault"></ngc-progressbar>
+  <ngc-progressbar
+    [type]="'bar'"
+    [value]="80"
+    id="progrebarbarDefault"
+  ></ngc-progressbar>
+</div>
+<h1 class="display-1">Hero</h1>
+ -->
+
+<div class="wrapper">
+  <div class="sidenav-holder">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="main-content">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="jumbotron">
+          <ngc-progressbar
+            [type]="'circle'"
+            [value]="20"
+            id="progrebarTwo"
+          ></ngc-progressbar>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="jumbotron"></div>
+      </div>
+      <div class="col-md-6">
+        <div class="jumbotron"></div>
+      </div>
+      <div class="col-md-6">
+        <div class="jumbotron"></div>
+      </div>
+    </div>
+  </div>
 </div>
