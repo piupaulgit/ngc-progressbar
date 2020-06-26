@@ -15,14 +15,14 @@ export interface Progressbar {
   // parcentage bar stying
   barStyles?: {
     color: string;
-    width: number;
+    lineWidth: number;
     style: any;
   };
 
   // base bar styling
   baseStyles?: {
     color: string;
-    width: number;
+    lineWidth: number;
     style: any;
   };
 

@@ -40,20 +40,20 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
 
   defaultBaseStyle: Progressbar['baseStyles'] = {
     color: '#f1f1f1',
-    width: 10,
+    lineWidth: 100,
     style: 'square',
   };
 
   defaultBarStyle: Progressbar['barStyles'] = {
     color: '#333',
-    width: 10,
+    lineWidth: 100,
     style: 'square',
   };
 
   defaultTextStyle: Progressbar['textStyles'] = {
     fontSize: 20,
     fontFamily: 'Arial',
-    color: '#333',
+    color: 'red',
     position: 'center',
     html: '<span></span>',
   };
@@ -79,9 +79,6 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
       progressBarType: this.type,
       progressBarValue: this.value,
       progressBarId: this.id,
-      canvasBackground: this.styles?.canvasBackground
-        ? this.styles?.canvasBackground
-        : 'transparent',
       progressBarRadius: this.styles?.progressBarRadius
         ? this.styles?.progressBarRadius
         : '100',
@@ -92,9 +89,9 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
         style: this.styles?.barStyles?.style
           ? this.styles?.barStyles?.style
           : this.defaultBarStyle.style,
-        width: this.styles?.barStyles?.width
-          ? this.styles?.barStyles?.width
-          : this.defaultBarStyle.width,
+        lineWidth: this.styles?.barStyles?.lineWidth
+          ? this.styles?.barStyles?.lineWidth
+          : this.defaultBarStyle.lineWidth,
       },
       baseStyles: {
         color: this.styles?.baseStyles?.color
@@ -103,9 +100,9 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
         style: this.styles?.baseStyles?.style
           ? this.styles?.baseStyles?.style
           : this.defaultBaseStyle.style,
-        width: this.styles?.baseStyles?.width
-          ? this.styles?.baseStyles?.width
-          : this.defaultBaseStyle.width,
+        lineWidth: this.styles?.baseStyles?.lineWidth
+          ? this.styles?.baseStyles?.lineWidth
+          : this.defaultBaseStyle.lineWidth,
       },
       textStyles: {
         color: this.styles?.textStyles?.color

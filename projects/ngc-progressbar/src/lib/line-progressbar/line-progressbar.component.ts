@@ -19,7 +19,6 @@ export class LineProgressbarComponent implements OnInit, AfterViewInit {
         `.progressbar--bar#${this.progressbar.progressBarId}`
       )
     );
-    this.canvas.style.backgroundColor = this.progressbar.canvasBackground;
 
     // drawig canvas initially
     this.drawBar(this.canvas, this.progressbar.parentElemnent.width);
@@ -31,7 +30,7 @@ export class LineProgressbarComponent implements OnInit, AfterViewInit {
     const ctx = canvas.getContext('2d');
     // canvas height width
     canvas.width = parentWidth;
-    canvas.height = this.progressbar.baseStyles.width;
+    canvas.height = this.progressbar.baseStyles.lineWidth;
 
     // draw base bar
     ctx.beginPath();
@@ -46,10 +45,11 @@ export class LineProgressbarComponent implements OnInit, AfterViewInit {
     ctx.beginPath();
     ctx.rect(
       0,
-      (this.progressbar.baseStyles.width - this.progressbar.barStyles.width) /
+      (this.progressbar.baseStyles.lineWidth -
+        this.progressbar.barStyles.lineWidth) /
         2,
       parcentageWidth,
-      this.progressbar.barStyles.width
+      this.progressbar.barStyles.lineWidth
     );
     ctx.fillStyle = this.progressbar.barStyles.color;
     ctx.fill();
