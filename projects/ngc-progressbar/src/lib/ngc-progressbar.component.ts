@@ -40,24 +40,14 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
 
   defaultBaseStyle: Progressbar['baseStyles'] = {
     color: '#f1f1f1',
-<<<<<<< HEAD
     lineWidth: 100,
-    style: 'square',
-=======
-    width: 80,
     style: 'butt',
->>>>>>> d96c7a3a9cd7e313f89ae3bfd41daf808b18f487
   };
 
   defaultBarStyle: Progressbar['barStyles'] = {
     color: '#333',
-<<<<<<< HEAD
     lineWidth: 100,
-    style: 'square',
-=======
-    width: 80,
     style: 'butt',
->>>>>>> d96c7a3a9cd7e313f89ae3bfd41daf808b18f487
   };
 
   defaultTextStyle: Progressbar['textStyles'] = {
