@@ -1,0 +1,10 @@
+import { OnInit, AfterViewInit } from '@angular/core';
+import { Progressbar } from '../progressbar';
+export declare class LineProgressbarComponent implements OnInit, AfterViewInit {
+    progressbar: Progressbar;
+    canvas: any;
+    constructor();
+    ngOnInit(): void;
+    ngAfterViewInit(): void;
+    drawBar(canvas: any, parentWidth: any): void;
+}

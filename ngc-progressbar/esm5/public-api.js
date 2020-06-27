@@ -1,0 +1,7 @@
+/*
+ * Public API Surface of ngc-progressbar
+ */
+export * from './lib/ngc-progressbar.service';
+export * from './lib/ngc-progressbar.component';
+export * from './lib/ngc-progressbar.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL25nYy1wcm9ncmVzc2Jhci8iLCJzb3VyY2VzIjpbInB1YmxpYy1hcGkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0dBRUc7QUFFSCxjQUFjLCtCQUErQixDQUFDO0FBQzlDLGNBQWMsaUNBQWlDLENBQUM7QUFDaEQsY0FBYyw4QkFBOEIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2YgbmdjLXByb2dyZXNzYmFyXG4gKi9cblxuZXhwb3J0ICogZnJvbSAnLi9saWIvbmdjLXByb2dyZXNzYmFyLnNlcnZpY2UnO1xuZXhwb3J0ICogZnJvbSAnLi9saWIvbmdjLXByb2dyZXNzYmFyLmNvbXBvbmVudCc7XG5leHBvcnQgKiBmcm9tICcuL2xpYi9uZ2MtcHJvZ3Jlc3NiYXIubW9kdWxlJztcbiJdfQ==

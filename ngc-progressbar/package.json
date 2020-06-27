@@ -1,0 +1,47 @@
+{
+  "name": "ngc-progressbar",
+  "version": "1.0.2",
+  "description": "Angular progressbar",
+  "repository": "piupaulgit/ngc-progressbar",
+  "author": "piupaul <contactpiu619@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/piupaulgit/ngc-progressbar",
+  "bugs": {
+    "url": "https://github.com/piupaulgit/ngc-progressbar/issues"
+  },
+  "peerDependencies": {
+    "@angular/common": "^9.1.4",
+    "@angular/core": "^9.1.4",
+    "tslib": "^1.10.0"
+  },
+  "keywords": [
+    "angular",
+    "angular 9",
+    "ngc-progressbar",
+    "angular progresbar",
+    "angular circle progressbar",
+    "circle progressbar",
+    "canvas progressbar",
+    "line progressbar"
+  ],
+  "main": "bundles/ngc-progressbar.umd.js",
+  "module": "fesm5/ngc-progressbar.js",
+  "es2015_ivy_ngcc": "__ivy_ngcc__/fesm2015/ngc-progressbar.js",
+  "es2015": "fesm2015/ngc-progressbar.js",
+  "esm5": "esm5/ngc-progressbar.js",
+  "esm2015": "esm2015/ngc-progressbar.js",
+  "fesm5": "fesm5/ngc-progressbar.js",
+  "fesm2015_ivy_ngcc": "__ivy_ngcc__/fesm2015/ngc-progressbar.js",
+  "fesm2015": "fesm2015/ngc-progressbar.js",
+  "typings": "ngc-progressbar.d.ts",
+  "metadata": "ngc-progressbar.metadata.json",
+  "sideEffects": false,
+  "__processed_by_ivy_ngcc__": {
+    "es2015": "9.1.4",
+    "fesm2015": "9.1.4",
+    "typings": "9.1.4"
+  },
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by NGCC. This is not allowed.\\nPlease delete and rebuild the package, without compiling with NGCC, before attempting to publish.\\nNote that NGCC may have been run by importing this package into another project that is being built with Ivy enabled.\\n')\" && exit 1"
+  }
+}

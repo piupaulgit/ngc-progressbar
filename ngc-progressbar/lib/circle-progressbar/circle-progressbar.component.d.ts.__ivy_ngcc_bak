@@ -1,0 +1,11 @@
+import { OnInit, AfterViewInit } from '@angular/core';
+import { Progressbar } from '../progressbar';
+export declare class CircleProgressbarComponent implements OnInit, AfterViewInit {
+    progressbar: Progressbar;
+    canvas: any;
+    constructor();
+    ngOnInit(): void;
+    ngAfterViewInit(): void;
+    drawCircle(canvas: any, parentWidth: any): void;
+    drawCircleOnResize(parentWidth: any): void;
+}

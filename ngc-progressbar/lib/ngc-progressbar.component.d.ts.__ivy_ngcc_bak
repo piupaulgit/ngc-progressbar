@@ -1,0 +1,20 @@
+import { OnInit, OnChanges, ElementRef } from '@angular/core';
+import { Progressbar } from './progressbar';
+import { Subject } from 'rxjs';
+export declare class NgcProgressbarComponent implements OnInit, OnChanges {
+    private elRef;
+    type: string;
+    value: number;
+    id: string;
+    styles: any;
+    capturedInputs: Progressbar;
+    defaultBaseStyle: Progressbar['baseStyles'];
+    defaultBarStyle: Progressbar['barStyles'];
+    defaultTextStyle: Progressbar['textStyles'];
+    resizeSubject: Subject<unknown>;
+    private circleProgressbarComponent;
+    constructor(elRef: ElementRef);
+    ngOnInit(): void;
+    ngOnChanges(): void;
+    onResize(): void;
+}
