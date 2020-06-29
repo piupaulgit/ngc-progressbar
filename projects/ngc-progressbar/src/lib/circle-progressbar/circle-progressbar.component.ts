@@ -37,11 +37,11 @@ export class CircleProgressbarComponent implements OnInit, AfterViewInit {
     canvas.width = parentWidth;
     const circleRadious =
       this.progressbar.progressBarRadius * 2 +
-        this.progressbar.baseStyles.lineWidth * 2 >
+        this.progressbar.baseStyles.strokeWidth * 2 >
       canvas.width
-        ? canvas.width / 2 - this.progressbar.baseStyles.lineWidth
+        ? canvas.width / 2 - this.progressbar.baseStyles.strokeWidth
         : this.progressbar.progressBarRadius;
-    canvas.height = circleRadious * 2 + this.progressbar.baseStyles.lineWidth;
+    canvas.height = circleRadious * 2 + this.progressbar.baseStyles.strokeWidth;
 
     // render base bar
     ctx.beginPath();
@@ -54,7 +54,11 @@ export class CircleProgressbarComponent implements OnInit, AfterViewInit {
       true
     );
     ctx.strokeStyle = this.progressbar.baseStyles.color;
-    ctx.lineWidth = this.progressbar.baseStyles.lineWidth;
+    if (this.progressbar.baseStyles.fill !== 'none') {
+      ctx.fillStyle = this.progressbar.baseStyles.fill;
+      ctx.fill();
+    }
+    ctx.lineWidth = this.progressbar.baseStyles.strokeWidth;
     ctx.lineCap = this.progressbar.baseStyles.style;
     ctx.stroke();
 
@@ -71,7 +75,11 @@ export class CircleProgressbarComponent implements OnInit, AfterViewInit {
       renderdCircleValue * Math.PI
     );
     ctx.strokeStyle = this.progressbar.barStyles.color;
-    ctx.lineWidth = this.progressbar.barStyles.lineWidth;
+    if (this.progressbar.barStyles.fill !== 'none') {
+      ctx.fillStyle = this.progressbar.barStyles.fill;
+      ctx.fill();
+    }
+    ctx.lineWidth = this.progressbar.barStyles.strokeWidth;
     ctx.lineCap = this.progressbar.barStyles.style;
     ctx.stroke();
 

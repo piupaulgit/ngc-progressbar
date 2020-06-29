@@ -15,21 +15,22 @@ export class AppComponent {
     // base bar styling
     baseStyles: {
       color: 'green',
-      width: 40,
+      strokeWidth: 50,
       style: 'round',
+      fill: 'green',
     },
 
     // parcentage bar stying
     barStyles: {
-      color: '#fff',
-      width: 30,
+      color: '#095609',
+      strokeWidth: 20,
       style: 'round',
     },
 
     // text styling
     textStyles: {
       fontFamily: 'Arial',
-      color: 'blue',
+      color: '#fff',
       fontSize: 30,
       position: 'center',
       html: '<span>text</span>',

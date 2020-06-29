@@ -40,14 +40,16 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
 
   defaultBaseStyle: Progressbar['baseStyles'] = {
     color: '#f1f1f1',
-    lineWidth: 100,
+    strokeWidth: 100,
     style: 'butt',
+    fill: 'none',
   };
 
   defaultBarStyle: Progressbar['barStyles'] = {
     color: '#333',
-    lineWidth: 100,
+    strokeWidth: 100,
     style: 'butt',
+    fill: 'none',
   };
 
   defaultTextStyle: Progressbar['textStyles'] = {
@@ -71,6 +73,7 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
 
   ngOnChanges() {
+    console.log(this.styles, 'ioioio');
     this.capturedInputs = {
       parentElemnent: {
         width: this.elRef.nativeElement.parentElement.clientWidth,
@@ -89,9 +92,12 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
         style: this.styles?.barStyles?.style
           ? this.styles?.barStyles?.style
           : this.defaultBarStyle.style,
-        lineWidth: this.styles?.barStyles?.lineWidth
-          ? this.styles?.barStyles?.lineWidth
-          : this.defaultBarStyle.lineWidth,
+        strokeWidth: this.styles?.barStyles?.strokeWidth
+          ? this.styles?.barStyles?.strokeWidth
+          : this.defaultBarStyle.strokeWidth,
+        fill: this.styles?.barStyles?.fill
+          ? this.styles?.barStyles?.fill
+          : this.defaultBarStyle.fill,
       },
       baseStyles: {
         color: this.styles?.baseStyles?.color
@@ -100,9 +106,12 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
         style: this.styles?.baseStyles?.style
           ? this.styles?.baseStyles?.style
           : this.defaultBaseStyle.style,
-        lineWidth: this.styles?.baseStyles?.lineWidth
-          ? this.styles?.baseStyles?.lineWidth
-          : this.defaultBaseStyle.lineWidth,
+        strokeWidth: this.styles?.baseStyles?.strokeWidth
+          ? this.styles?.baseStyles?.strokeWidth
+          : this.defaultBaseStyle.strokeWidth,
+        fill: this.styles?.baseStyles?.fill
+          ? this.styles?.baseStyles?.fill
+          : this.defaultBaseStyle.fill,
       },
       textStyles: {
         color: this.styles?.textStyles?.color

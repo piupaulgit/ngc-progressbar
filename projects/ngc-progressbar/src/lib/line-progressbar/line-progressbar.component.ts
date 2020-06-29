@@ -30,7 +30,7 @@ export class LineProgressbarComponent implements OnInit, AfterViewInit {
     const ctx = canvas.getContext('2d');
     // canvas height width
     canvas.width = parentWidth;
-    canvas.height = this.progressbar.baseStyles.lineWidth;
+    canvas.height = this.progressbar.baseStyles.strokeWidth;
 
     // draw base bar
     ctx.beginPath();
@@ -45,11 +45,11 @@ export class LineProgressbarComponent implements OnInit, AfterViewInit {
     ctx.beginPath();
     ctx.rect(
       0,
-      (this.progressbar.baseStyles.lineWidth -
-        this.progressbar.barStyles.lineWidth) /
+      (this.progressbar.baseStyles.strokeWidth -
+        this.progressbar.barStyles.strokeWidth) /
         2,
       parcentageWidth,
-      this.progressbar.barStyles.lineWidth
+      this.progressbar.barStyles.strokeWidth
     );
     ctx.fillStyle = this.progressbar.barStyles.color;
     ctx.fill();
