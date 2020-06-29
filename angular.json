@@ -36,7 +36,9 @@
               "projects/ngc-progressbar/tsconfig.lib.json",
               "projects/ngc-progressbar/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -61,7 +63,9 @@
               "projects/ngc-progressbar-example/src/favicon.ico",
               "projects/ngc-progressbar-example/src/assets"
             ],
-            "styles": ["projects/ngc-progressbar-example/src/styles.scss"],
+            "styles": [
+              "projects/ngc-progressbar-example/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -123,7 +127,9 @@
               "projects/ngc-progressbar-example/src/favicon.ico",
               "projects/ngc-progressbar-example/src/assets"
             ],
-            "styles": ["projects/ngc-progressbar-example/src/styles.css"],
+            "styles": [
+              "projects/ngc-progressbar-example/src/styles.scss"
+            ],
             "scripts": []
           }
         },
@@ -135,7 +141,9 @@
               "projects/ngc-progressbar-example/tsconfig.spec.json",
               "projects/ngc-progressbar-example/e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
