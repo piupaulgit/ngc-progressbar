@@ -6,34 +6,25 @@
     <div class="row">
       <div class="col-md-6">
         <div class="jumbotron">
-          <ngc-progressbar
-            [type]="'circle'"
-            [value]="80"
-            id="progrebarOne"
-          ></ngc-progressbar>
+          <ngc-progressbar [type]="'circle'" [value]="80" id="progrebarOne"></ngc-progressbar>
         </div>
       </div>
       <div class="col-md-6">
         <div class="jumbotron">
-          <ngc-progressbar
-            [type]="'bar'"
-            [value]="80"
-            id="progrebarTwo"
-          ></ngc-progressbar>
+          <ngc-progressbar [type]="'bar'" [value]="80" id="progrebarTwo"></ngc-progressbar>
         </div>
       </div>
       <div class="col-md-6">
         <div class="jumbotron">
-          <ngc-progressbar
-            [type]="'circle'"
-            [styles]="progressBarStyle1"
-            [value]="80"
-            id="progrebarThree"
-          ></ngc-progressbar>
+          <ngc-progressbar [type]="'circle'" [styles]="progressBarStyle1" [value]="80" id="progrebarThree">
+          </ngc-progressbar>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="jumbotron"></div>
+        <div class="jumbotron">
+          <ngc-progressbar [type]="'bar'" [styles]="progressBarStyle2" [value]="80" id="progrebarFour">
+          </ngc-progressbar>
+        </div>
       </div>
     </div>
   </div>

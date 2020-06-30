@@ -9,9 +9,9 @@ import { Progressbar } from '../progressbar';
 export class LineProgressbarComponent implements OnInit, AfterViewInit {
   @Input() progressbar: Progressbar;
   canvas: any;
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   ngAfterViewInit() {
     this.canvas = <HTMLCanvasElement>(
@@ -34,6 +34,7 @@ export class LineProgressbarComponent implements OnInit, AfterViewInit {
 
     // draw base bar
     ctx.beginPath();
+    ctx.lineCap = this.progressbar.baseStyles.style;
     ctx.rect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = this.progressbar.baseStyles.color;
     ctx.fill();
@@ -43,11 +44,12 @@ export class LineProgressbarComponent implements OnInit, AfterViewInit {
     const parcentageWidth =
       (canvas.width / 100) * this.progressbar.progressBarValue;
     ctx.beginPath();
+    ctx.lineCap = this.progressbar.barStyles.style;
     ctx.rect(
       0,
       (this.progressbar.baseStyles.strokeWidth -
         this.progressbar.barStyles.strokeWidth) /
-        2,
+      2,
       parcentageWidth,
       this.progressbar.barStyles.strokeWidth
     );

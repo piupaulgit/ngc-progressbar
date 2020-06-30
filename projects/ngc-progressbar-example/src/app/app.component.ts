@@ -23,7 +23,7 @@ export class AppComponent {
     // parcentage bar stying
     barStyles: {
       color: '#095609',
-      strokeWidth: 20,
+      strokeWidth: 40,
       style: 'round',
     },
 
@@ -37,24 +37,23 @@ export class AppComponent {
     },
   };
 
-  progressBarStyle2 = {};
 
-  progressBarBarStyle1 = {
+  progressBarStyle2 = {
     // main canvas styling
-    canvasBackground: '#f4f3f3',
+    canvasBackground: 'green',
     progressBarRadius: 100,
 
     // base bar styling
     baseStyles: {
-      color: '#333',
-      width: 40,
+      color: '#095609',
+      strokeWidth: 50,
       style: 'round',
     },
 
     // parcentage bar stying
     barStyles: {
       color: 'green',
-      width: 30,
+      strokeWidth: 40,
       style: 'round',
     },
 

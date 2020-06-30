@@ -40,14 +40,14 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
 
   defaultBaseStyle: Progressbar['baseStyles'] = {
     color: '#f1f1f1',
-    strokeWidth: 100,
+    strokeWidth: 50,
     style: 'butt',
     fill: 'none',
   };
 
   defaultBarStyle: Progressbar['barStyles'] = {
     color: '#333',
-    strokeWidth: 100,
+    strokeWidth: 50,
     style: 'butt',
     fill: 'none',
   };
@@ -70,7 +70,7 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   ngOnChanges() {
     console.log(this.styles, 'ioioio');
