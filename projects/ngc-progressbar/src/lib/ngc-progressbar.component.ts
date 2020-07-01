@@ -43,6 +43,7 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
     strokeWidth: 50,
     style: 'butt',
     fill: 'none',
+    radius: 100
   };
 
   defaultBarStyle: Progressbar['barStyles'] = {
@@ -50,6 +51,7 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
     strokeWidth: 50,
     style: 'butt',
     fill: 'none',
+    radius: 100
   };
 
   defaultTextStyle: Progressbar['textStyles'] = {
@@ -82,9 +84,6 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
       progressBarType: this.type,
       progressBarValue: this.value,
       progressBarId: this.id,
-      progressBarRadius: this.styles?.progressBarRadius
-        ? this.styles?.progressBarRadius
-        : '100',
       barStyles: {
         color: this.styles?.barStyles?.color
           ? this.styles?.barStyles?.color
@@ -98,6 +97,9 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
         fill: this.styles?.barStyles?.fill
           ? this.styles?.barStyles?.fill
           : this.defaultBarStyle.fill,
+        radius: this.styles?.barStyles?.radius
+          ? this.styles?.barStyles?.radius
+          : this.defaultBarStyle.radius
       },
       baseStyles: {
         color: this.styles?.baseStyles?.color
@@ -112,6 +114,9 @@ export class NgcProgressbarComponent implements OnInit, OnChanges {
         fill: this.styles?.baseStyles?.fill
           ? this.styles?.baseStyles?.fill
           : this.defaultBaseStyle.fill,
+        radius: this.styles?.baseStyles?.radius
+          ? this.styles?.baseStyles?.radius
+          : this.defaultBaseStyle.radius
       },
       textStyles: {
         color: this.styles?.textStyles?.color

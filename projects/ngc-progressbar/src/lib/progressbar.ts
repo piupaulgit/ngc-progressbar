@@ -10,7 +10,6 @@ export interface Progressbar {
   progressBarValue: number;
   progressBarId: string;
   canvasBackground?: string;
-  progressBarRadius?: number;
 
   // parcentage bar stying
   barStyles?: {
@@ -18,6 +17,7 @@ export interface Progressbar {
     strokeWidth: number;
     style: any;
     fill: string;
+    radius: number;
   };
 
   // base bar styling
@@ -26,6 +26,7 @@ export interface Progressbar {
     strokeWidth: number;
     style: any;
     fill: string;
+    radius: number;
   };
 
   // text styling

@@ -10,27 +10,30 @@ export class AppComponent {
   progressBarStyle1 = {
     // main canvas styling
     canvasBackground: '#f1f1f1',
-    progressBarRadius: 100,
 
     // base bar styling
     baseStyles: {
       color: 'green',
-      strokeWidth: 50,
+      strokeWidth:
+        10,
       style: 'round',
-      fill: 'green',
+      fill: 'none',
+      radius: 80
     },
 
     // parcentage bar stying
     barStyles: {
       color: '#095609',
-      strokeWidth: 40,
+      strokeWidth:
+        20,
       style: 'round',
+      radius: 60
     },
 
     // text styling
     textStyles: {
       fontFamily: 'Arial',
-      color: '#fff',
+      color: '#095609',
       fontSize: 30,
       position: 'center',
       html: '<span>text</span>',

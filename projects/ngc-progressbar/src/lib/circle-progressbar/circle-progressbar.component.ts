@@ -16,9 +16,9 @@ import { Progressbar } from '../progressbar';
 export class CircleProgressbarComponent implements OnInit, AfterViewInit {
   @Input() progressbar: Progressbar;
   canvas: any;
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   ngAfterViewInit() {
     this.canvas = <HTMLCanvasElement>(
       document.querySelector(
@@ -35,20 +35,20 @@ export class CircleProgressbarComponent implements OnInit, AfterViewInit {
     const ctx = canvas.getContext('2d');
     // canvas height width
     canvas.width = parentWidth;
-    const circleRadious =
-      this.progressbar.progressBarRadius * 2 +
-        this.progressbar.baseStyles.strokeWidth * 2 >
-      canvas.width
-        ? canvas.width / 2 - this.progressbar.baseStyles.strokeWidth
-        : this.progressbar.progressBarRadius;
-    canvas.height = circleRadious * 2 + this.progressbar.baseStyles.strokeWidth;
+    const baseCircleRadius = this.progressbar.baseStyles.radius;
+    const barCircleRadius = this.progressbar.barStyles.radius;
+    if (baseCircleRadius > barCircleRadius) {
+      canvas.height = baseCircleRadius * 2 + this.progressbar.baseStyles.strokeWidth;
+    } else {
+      canvas.height = barCircleRadius * 2 + this.progressbar.barStyles.strokeWidth;
+    }
 
     // render base bar
     ctx.beginPath();
     ctx.arc(
       canvas.width / 2,
       canvas.height / 2,
-      circleRadious,
+      baseCircleRadius,
       0,
       2 * Math.PI,
       true
@@ -70,7 +70,7 @@ export class CircleProgressbarComponent implements OnInit, AfterViewInit {
     ctx.arc(
       canvas.width / 2,
       canvas.height / 2,
-      circleRadious,
+      barCircleRadius,
       1.5 * Math.PI,
       renderdCircleValue * Math.PI
     );
