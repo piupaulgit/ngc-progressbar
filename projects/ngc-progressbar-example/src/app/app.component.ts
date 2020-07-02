@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private cd: ChangeDetectorRef) {}
   title = 'ngc-progressbar-example';
+  val: number = 0;
+  ngOnInit() {
+    this.val = 50;
+    setTimeout(() => {
+      this.val = 80;
+      this.cd.detectChanges();
+    }, 2000);
+  }
+
   progressBarStyle1 = {
     // main canvas styling
     canvasBackground: '#f1f1f1',
@@ -14,20 +24,18 @@ export class AppComponent {
     // base bar styling
     baseStyles: {
       color: 'green',
-      strokeWidth:
-        10,
+      strokeWidth: 10,
       style: 'round',
       fill: 'none',
-      radius: 80
+      radius: 100,
     },
 
     // parcentage bar stying
     barStyles: {
       color: '#095609',
-      strokeWidth:
-        20,
+      strokeWidth: 20,
       style: 'round',
-      radius: 60
+      radius: 100,
     },
 
     // text styling
@@ -39,7 +47,6 @@ export class AppComponent {
       html: '<span>text</span>',
     },
   };
-
 
   progressBarStyle2 = {
     // main canvas styling
